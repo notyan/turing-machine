@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
 import Input from './Input'
-import Tambah from './Tambah';
+import Tambah from './opr/Tambah';
 
 class App extends Component{
   state = {
