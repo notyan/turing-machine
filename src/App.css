@@ -1,0 +1,19 @@
+.scroll-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.box {
+  display: inline-block;
+  background-color: darkcyan;
+  width: 32px;
+  height: 48px;
+  margin: 2px;
+  font-weight: bold;
+  text-align: center;
+  border: solid;
+  line-height: 48px;
+}
+.white{
+  background-color: darkgray;
+}
