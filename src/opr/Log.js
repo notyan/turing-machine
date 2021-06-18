@@ -65,22 +65,16 @@ class Log extends Component {
         if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter+1, 1)
         }
-        console.log("iter " +  this.state.iter)
-        console.log("state " + this.state.pos)
     }
     first(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 1) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 2)
             : console.log("Outside Range")
-        console.log("iter " +  this.state.iter)
-        console.log("state " + this.state.pos)
     }
     second(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 2) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 3)
             : console.log("Outside Range")
-        console.log("iter " +  this.state.iter)
-        console.log("state " + this.state.pos)
     }
     third(){
         if(this.state.newList[this.state.iter] === 0){
@@ -89,23 +83,17 @@ class Log extends Component {
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter+1, 9)
         } 
-        console.log("iter " +  this.state.iter)
-        console.log("state " + this.state.pos)
     }
     forth(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 4) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 5)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     fifth(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 5) :
         (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter+1, 6):
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 6)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     sixth(){
         if(this.state.newList[this.state.iter] === 0){
@@ -114,29 +102,21 @@ class Log extends Component {
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter+1, 13)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     seventh(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 7) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 8)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     eighth(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 8) :
         (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter-1, 3)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     ninth(){
         (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter+1, 9) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 10)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     tenth(){
         if(this.state.newList[this.state.iter] === 0){
@@ -146,15 +126,11 @@ class Log extends Component {
             this.listUpdate(0, this.state.iter)
             this.stateUpdate(this.state.iter-1, 11)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     eleventh(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 11) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 12)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     twelfth(){
         if(this.state.newList[this.state.iter] === 1){
@@ -163,8 +139,6 @@ class Log extends Component {
             this.listUpdate(0, this.state.iter)
             this.stateUpdate(this.state.iter-1, 12)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     thirteenth(){
         if(this.state.newList[this.state.iter] === 0){
@@ -175,15 +149,11 @@ class Log extends Component {
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter+1, 14)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     fourteenth(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 14) :
         (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter-1, 15)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     fifteenth(){
         if(this.state.newList[this.state.iter] === 0){
@@ -192,22 +162,17 @@ class Log extends Component {
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter-1, 22)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     sixteenth(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 16) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 17)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     seventeenth(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 17) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 18)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
+
     }
     eighteenth(){
         if(this.state.newList[this.state.iter] === 0){
@@ -216,36 +181,26 @@ class Log extends Component {
             this.listUpdate(0, this.state.iter)
             this.stateUpdate(this.state.iter+1, 19)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     nineteenth(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 19) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 20)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     twentieth(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 20) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 21)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     twenFirst(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 21) :
         (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter-1, 15)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     twenSecond(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 22) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 23)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     twenThird(){
         if(this.state.newList[this.state.iter] === 0){
@@ -256,8 +211,6 @@ class Log extends Component {
             this.listUpdate(1, this.state.iter)
             this.stateUpdate(this.state.iter-1, 23)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     twenForth(){
         if(this.state.newList[this.state.iter] === 0){
@@ -269,45 +222,33 @@ class Log extends Component {
             let temp = this.state.newList;  temp.unshift('B'); 
             this.setState({newList:temp}, ()=>{
                 this.listUpdate(0, this.state.iter)
-            })              
-            
+            })            
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
+
     }
     twenFifth(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 25) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 26)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     twenSixth(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 27) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 26)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     twenSeventh(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 1) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 28)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     twenEighth(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 29)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     twenNinth(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 30) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 29)
             : console.log("Outside Range")
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     thirtieth(){
         if(this.state.newList[this.state.iter] === 0){
