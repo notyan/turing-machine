@@ -39,59 +39,48 @@ class Kurang extends Component {
         this.stateUpdate(this.state.iter, 0)
     }
     zero(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 0)
-        }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter+1, 1)
-        }
+        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 0) 
+            : (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 1) 
+                : console.log("Err at " + this.state.pos)
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     first(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 1)
-        }else if(this.state.newList[this.state.iter] === 'B'){
-            this.stateUpdate(this.state.iter-1, 2)
-        }
+        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 1) 
+            : (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter-1, 2) 
+                : console.log("Err at " + this.state.pos)
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     second(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.listUpdate('B', this.state.iter)
+        if (this.state.newList[this.state.iter] === 0) {
+            this.listUpdate('B', this.state.iter) 
             this.stateUpdate(this.state.iter-1, 3)
-        }else if(this.state.newList[this.state.iter] === 1 ){
+        } else if(this.state.newList[this.state.iter] === 1) {
             this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter-1, 6)
-        }
+        } 
+                
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     third(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter-1, 3)
-        }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter-1, 4)
-        }
+        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 3) 
+            : (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 4) 
+                : console.log("Err at " + this.state.pos)
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     forth(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter-1, 4)
-        }else if(this.state.newList[this.state.iter] === 'B' ){
-            this.stateUpdate(this.state.iter+1, 5)
-        }
+        (this.state.newList[this.state.iter] === 0) ?this.stateUpdate(this.state.iter-1, 4) 
+            : (this.state.newList[this.state.iter] === 'B' )? this.stateUpdate(this.state.iter+1, 5) 
+                : console.log("Err at " + this.state.pos)
         console.log("iter " + this.state.iter)
         console.log("state " + this.state.pos)
     }
     fifth(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.listUpdate('B', this.state.iter)
-            this.stateUpdate(this.state.iter+1, 0)
-        }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter-1, )
-        }
+        if(this.state.newList[this.state.iter] === 0) { this.listUpdate('B', this.state.iter); this.stateUpdate(this.state.iter+1, 0)}
+            else if(this.state.newList[this.state.iter] === 1){this.stateUpdate(this.state.iter-1, 6)}
         console.log("iter " + this.state.iter)
         console.log("state " + this.state.pos)
     }
