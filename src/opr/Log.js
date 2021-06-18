@@ -266,6 +266,11 @@ class Log extends Component {
             this.stateUpdate(this.state.iter-1, 24)
         }else if(this.state.newList[this.state.iter] === 'B'){
             this.stateUpdate(this.state.iter+1, 25)
+            let temp = this.state.newList;  temp.unshift('B'); 
+            this.setState({newList:temp}, ()=>{
+                this.listUpdate(0, this.state.iter)
+            })              
+            
         }
         console.log("iter " + this.state.iter)
         console.log("state " + this.state.pos)
