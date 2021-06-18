@@ -52,8 +52,6 @@ class Mod extends Component {
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter+1, 7)
         }
-        console.log("iter " +  this.state.iter)
-        console.log("state " + this.state.pos)
     }
     first(){
         if(this.state.newList[this.state.iter] === 0){
@@ -61,8 +59,6 @@ class Mod extends Component {
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter+1, 2)
         }
-        console.log("iter " +  this.state.iter)
-        console.log("state " + this.state.pos)
     }
     second(){
         if(this.state.newList[this.state.iter] === 'B'){
@@ -73,8 +69,6 @@ class Mod extends Component {
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter-1, 5)
         }
-        console.log("iter " +  this.state.iter)
-        console.log("state " + this.state.pos)
     }
     third(){
         //console.log("\nhead "+ this.state.newList[this.state.iter] )
@@ -83,8 +77,6 @@ class Mod extends Component {
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter-1, 4)
         } 
-        console.log("iter " +  this.state.iter)
-        console.log("state " + this.state.pos)
     }
     forth(){
         if(this.state.newList[this.state.iter] === 0){
@@ -92,8 +84,6 @@ class Mod extends Component {
         }else if(this.state.newList[this.state.iter] === 'B' ){
             this.stateUpdate(this.state.iter+1, 0)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     fifth(){
         if(this.state.newList[this.state.iter] === 'B'){
@@ -103,8 +93,6 @@ class Mod extends Component {
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter-1, 6)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     sixth(){
         if(this.state.newList[this.state.iter] === 0){
@@ -113,8 +101,6 @@ class Mod extends Component {
             this.listUpdate(0, this.state.iter)
             this.stateUpdate(this.state.iter-1, 14)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     seventh(){
         if(this.state.newList[this.state.iter] === 0){
@@ -122,8 +108,6 @@ class Mod extends Component {
         }else if(this.state.newList[this.state.iter] === "B"){
             this.stateUpdate(this.state.iter+1, 7)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     eighth(){
         if(this.state.newList[this.state.iter] === 1){
@@ -133,8 +117,6 @@ class Mod extends Component {
             this.listUpdate(0, this.state.iter)
             this.stateUpdate(this.state.iter-1, 9)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     ninth(){
         if(this.state.newList[this.state.iter] === 1){
@@ -142,8 +124,6 @@ class Mod extends Component {
         }else if(this.state.newList[this.state.iter] === 'B'){
             this.stateUpdate(this.state.iter-1, 9)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     tenth(){
         if(this.state.newList[this.state.iter] === 0){
@@ -152,8 +132,6 @@ class Mod extends Component {
             this.listUpdate(0, this.state.iter)
             this.stateUpdate(this.state.iter+1, 11)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     eleventh(){
         if(this.state.newList[this.state.iter] === 0){
@@ -161,8 +139,6 @@ class Mod extends Component {
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter+1, 7)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     twelfth(){
         if(this.state.newList[this.state.iter] === 0){
@@ -172,9 +148,6 @@ class Mod extends Component {
             this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 13)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
-        
     }
     thirteenth(){
         console.log("ENDED" )

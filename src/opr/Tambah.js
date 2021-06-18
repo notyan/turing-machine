@@ -46,8 +46,6 @@ class Tambah extends Component {
             this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 5)
         }
-        
-        console.log("state " + this.state.pos)
     }
     first(){
         console.log("iter " +  this.state.iter)
@@ -56,7 +54,6 @@ class Tambah extends Component {
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter+1, 2)
         }
-        console.log("state " + this.state.pos)
     }
     second(){
         if(this.state.newList[this.state.iter] === 0){
@@ -68,8 +65,6 @@ class Tambah extends Component {
             this.listUpdate(0, this.state.iter)
             this.stateUpdate(this.state.iter-1, 3)
         }
-        console.log("iter " +  this.state.iter)
-        console.log("state " + this.state.pos)
     }
     third(){
         if(this.state.newList[this.state.iter] === 0){
@@ -77,8 +72,6 @@ class Tambah extends Component {
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter-1, 4)
         }
-        console.log("iter " +  this.state.iter)
-        console.log("state " + this.state.pos)
     }
     forth(){
         if(this.state.newList[this.state.iter] === 0){
@@ -86,8 +79,6 @@ class Tambah extends Component {
         }else if(this.state.newList[this.state.iter] === 'B' ){
             this.stateUpdate(this.state.iter+1, 0)
         }
-        console.log("iter " + this.state.iter)
-        console.log("state " + this.state.pos)
     }
     fifth(){
         console.log("ENDED")
