@@ -5,6 +5,7 @@ import Tambah from './opr/Tambah';
 import Kurang from './opr/Kurang';
 import Kali from './opr/Kali';
 import Bagi from './opr/Bagi';
+import Mod from './opr/Mod';
 
 class App extends Component{
   state = {
@@ -31,7 +32,8 @@ class App extends Component{
     opr === '+' ? operation = <Tambah variable={this.state}/> :
       opr === '-' ? operation = <Kurang variable={this.state}/> :
         opr === 'x' ? operation = <Kali variable={this.state}/> : 
-          opr === '/' ? operation = <Bagi variable={this.state}/> : <br></br>
+          opr === '/' ? operation = <Bagi variable={this.state}/> : 
+            opr === '%' ? operation = <Mod varoable={this.state}/> : <br></br>
     
     return(
 
