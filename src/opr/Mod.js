@@ -13,7 +13,6 @@ class Mod extends Component {
         this.setState({
             newList:temp
         }, () => console.log("iterasi " + i +" diganti " + x))
-        
     }
     start(){
         switch (this.state.pos) {
