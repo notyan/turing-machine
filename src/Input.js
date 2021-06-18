@@ -51,12 +51,12 @@ class Input extends Component{
         })
         return(
             <div>
-                <input type="submit" id="delimiter" value="+" onClick={() => this.handleClick(tape, '+')}/>
-                <input type="submit" id="delimiter" value="-" onClick={() => this.handleClick(tape, '-')}/>
-                <input type="submit" id="delimiter" value="/" onClick={() => this.handleClick(tape, '/')}/>
-                <input type="submit" id="delimiter" value="x" onClick={() => this.handleClick(tape, 'x')}/>
-                <input type="submit" id="delimiter" value="%" onClick={() => this.handleClick(tape, '%')}/>
-                <input type="submit" id="delimiter" value="log" onClick={() => this.handleClick(tape, 'log')}/>
+                <input class='bttn' type="submit" id="delimiter" value="+" onClick={() => this.handleClick(tape, '+')}/>
+                <input class='bttn' type="submit" id="delimiter" value="-" onClick={() => this.handleClick(tape, '-')}/>
+                <input class='bttn' ype="submit" id="delimiter" value="/" onClick={() => this.handleClick(tape, '/')}/>
+                <input class='bttn' type="submit" id="delimiter" value="x" onClick={() => this.handleClick(tape, 'x')}/>
+                <input class='bttn' type="submit" id="delimiter" value="%" onClick={() => this.handleClick(tape, '%')}/>
+                <input class='bttn' type="submit" id="delimiter" value="log" onClick={() => this.handleClick(tape, 'log')}/>
                 <div className="scroll-container" >
                     {variable.blank}
                     {print}

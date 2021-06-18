@@ -194,8 +194,8 @@ class Kali extends Component {
         })
         return(
             <div>
-                <input type="submit" id="" value="Manual x" onClick={() => this.handleClick()}/>
-                <input type="submit" id="" value="reset" onClick={() => this.handleReset()}/>
+                <input class='bttn' type="submit" id="" value="Manual x" onClick={() => this.handleClick()}/>
+                <input class='bttn' type="submit" id="" value="reset" onClick={() => this.handleReset()}/>
                 <div className="scroll-container">
                     {print}
                 </div>

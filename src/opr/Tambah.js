@@ -130,8 +130,8 @@ class Tambah extends Component {
         })
         return(
             <div>
-                <input type="submit" id="" value="Manual" onClick={() => this.handleClick()}/>
-                <input type="submit" id="" value="reset" onClick={() => this.handleReset()}/>
+                <input class='bttn' type="submit" id="" value="Manual" onClick={() => this.handleClick()}/>
+                <input class='bttn' type="submit" id="" value="reset" onClick={() => this.handleReset()}/>
                 <div className="scroll-container">
                     {print}
                 </div>

@@ -48,6 +48,7 @@ class Log extends Component {
             case 28 : this.twenEighth();    break;
             case 29 : this.twenNinth();     break;
             case 30 : this.thirtieth();     break;
+            case 31 : this.thirFirst();     break;
             default : break;
         }
     }
@@ -264,7 +265,6 @@ class Log extends Component {
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter-1, 24)
         }else if(this.state.newList[this.state.iter] === 'B'){
-            this.listUpdate(0, this.state.iter)
             this.stateUpdate(this.state.iter+1, 25)
         }
         console.log("iter " + this.state.iter)
@@ -320,7 +320,6 @@ class Log extends Component {
         console.log("ENDED")
     }
 
-
     handleClick = () =>{
         if(this.state.newList.length === 0){
             this.setState({
@@ -356,8 +355,8 @@ class Log extends Component {
         })
         return(
             <div>
-                <input type="submit" id="" value="Manual %" onClick={() => this.handleClick()}/>
-                <input type="submit" id="" value="reset" onClick={() => this.handleReset()}/>
+                <input class='bttn' type="submit" id="" value="Manual %" onClick={() => this.handleClick()}/>
+                <input class='bttn' type="submit" id="" value="reset" onClick={() => this.handleReset()}/>
                 <div className="scroll-container">
                     {print}
                 </div>
