@@ -33,7 +33,7 @@ class App extends Component{
       opr === '-' ? operation = <Kurang variable={this.state}/> :
         opr === 'x' ? operation = <Kali variable={this.state}/> : 
           opr === '/' ? operation = <Bagi variable={this.state}/> : 
-            opr === '%' ? operation = <Mod varoable={this.state}/> : <br></br>
+            opr === '%' ? operation = <Mod variable={this.state}/> : <br></br>
     
     return(
 

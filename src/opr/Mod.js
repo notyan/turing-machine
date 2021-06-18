@@ -32,6 +32,7 @@ class Mod extends Component {
             case 11 : this.eleventh();  break;
             case 12 : this.twelfth();   break;
             case 13 : this.thirteenth();   break;
+            case 14 : this.fourteenth();   break;
             default : break;
         }
     }
@@ -46,9 +47,10 @@ class Mod extends Component {
     }
     zero(){
         if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 0)
-        }else if(this.state.newList[this.state.iter] === 1){
+            this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 1)
+        }else if(this.state.newList[this.state.iter] === 1){
+            this.stateUpdate(this.state.iter+1, 7)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
@@ -57,29 +59,30 @@ class Mod extends Component {
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter+1, 1)
         }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter-1, 2)
+            this.stateUpdate(this.state.iter+1, 2)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     second(){
-        if(this.state.newList[this.state.iter] === 0){
+        if(this.state.newList[this.state.iter] === 'B'){
+            this.stateUpdate(this.state.iter+1, 2)
+        }else if(this.state.newList[this.state.iter] === 0 ){
             this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter-1, 3)
-        }else if(this.state.newList[this.state.iter] === 1 ){
-            this.stateUpdate(this.state.iter+1, 8)
+        }else if(this.state.newList[this.state.iter] === 1){
+            this.stateUpdate(this.state.iter-1, 5)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     third(){
         //console.log("\nhead "+ this.state.newList[this.state.iter] )
-        if(this.state.newList[this.state.iter] === 0){
+        if(this.state.newList[this.state.iter] === 'B'){
             this.stateUpdate(this.state.iter-1, 3)
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter-1, 4)
-        }
-        
+        } 
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
@@ -87,56 +90,57 @@ class Mod extends Component {
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter-1, 4)
         }else if(this.state.newList[this.state.iter] === 'B' ){
-            let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
-            this.stateUpdate(this.state.iter+1, 5)
+            this.stateUpdate(this.state.iter+1, 0)
         }
         console.log("iter " + this.state.iter)
         console.log("state " + this.state.pos)
     }
     fifth(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.listUpdate('B', this.state.iter)
-            this.stateUpdate(this.state.iter+1, 6)
+        if(this.state.newList[this.state.iter] === 'B'){
+            let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
+            this.listUpdate(0, this.state.iter)
+            this.stateUpdate(this.state.iter-1, 5)
         }else if(this.state.newList[this.state.iter] === 1){
-            this.listUpdate('B', this.state.iter)
-            this.stateUpdate(this.state.iter+1, 11)
+            this.stateUpdate(this.state.iter-1, 6)
         }
         console.log("iter " + this.state.iter)
         console.log("state " + this.state.pos)
     }
     sixth(){
         if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 6)
-        }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter+1, 7)
+            this.stateUpdate(this.state.iter-1, 6)
+        }else if(this.state.newList[this.state.iter] === "B"){
+            this.listUpdate(0, this.state.iter)
+            this.stateUpdate(this.state.iter-1, 14)
         }
         console.log("iter " + this.state.iter)
         console.log("state " + this.state.pos)
     }
     seventh(){
         if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 7)
+            this.stateUpdate(this.state.iter-1, 8)
         }else if(this.state.newList[this.state.iter] === "B"){
-            this.stateUpdate(this.state.iter-1, 2)
+            this.stateUpdate(this.state.iter+1, 7)
         }
         console.log("iter " + this.state.iter)
         console.log("state " + this.state.pos)
     }
     eighth(){
         if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter+1, 9)
+            this.listUpdate("B", this.state.iter)
+            this.stateUpdate(this.state.iter+1, 12)
         }else if(this.state.newList[this.state.iter] === "B"){
-            this.stateUpdate(this.state.iter+1, 8)
+            this.listUpdate(0, this.state.iter)
+            this.stateUpdate(this.state.iter-1, 9)
         }
         console.log("iter " + this.state.iter)
         console.log("state " + this.state.pos)
     }
     ninth(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 9)
-        }else if(this.state.newList[this.state.iter] === 'B'){
-            this.listUpdate(0, this.state.iter)
+        if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter-1, 10)
+        }else if(this.state.newList[this.state.iter] === 'B'){
+            this.stateUpdate(this.state.iter-1, 9)
         }
         console.log("iter " + this.state.iter)
         console.log("state " + this.state.pos)
@@ -144,36 +148,45 @@ class Mod extends Component {
     tenth(){
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter-1, 10)
-        }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter-1, 13)
+        }else if(this.state.newList[this.state.iter] === 'B'){
+            this.listUpdate(0, this.state.iter)
+            this.stateUpdate(this.state.iter+1, 11)
         }
         console.log("iter " + this.state.iter)
         console.log("state " + this.state.pos)
     }
     eleventh(){
         if(this.state.newList[this.state.iter] === 0){
-            this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 11)
         }else if(this.state.newList[this.state.iter] === 1){
-            this.listUpdate('B', this.state.iter)
-            this.stateUpdate(this.state.iter+1, 12)
+            this.stateUpdate(this.state.iter+1, 7)
         }
         console.log("iter " + this.state.iter)
         console.log("state " + this.state.pos)
     }
     twelfth(){
-        console.log("ENDED" )
-        console.log("ENDED" )
-    }
-    thirteenth(){
-        if(this.state.newList[this.state.iter] === 'B'){
-            this.listUpdate(0, this.state.iter)
-            this.stateUpdate(this.state.iter-1, 13)
+        if(this.state.newList[this.state.iter] === 0){
+            this.listUpdate('B', this.state.iter)
+            this.stateUpdate(this.state.iter+1, 12)
         }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter+1, 1)
+            this.listUpdate('B', this.state.iter)
+            this.stateUpdate(this.state.iter+1, 13)
         }
         console.log("iter " + this.state.iter)
         console.log("state " + this.state.pos)
+        
+    }
+    thirteenth(){
+        console.log("ENDED" )
+        console.log("ENDED" )
+    }
+    fourteenth(){
+        if(this.state.newList[this.state.iter] === 'B'){
+            this.stateUpdate(this.state.iter+1, 0)
+        }
+        console.log("iter " + this.state.iter)
+        console.log("state " + this.state.pos)
+        
     }
     handleClick = () =>{
         if(this.state.newList.length === 0){
@@ -211,7 +224,7 @@ class Mod extends Component {
         })
         return(
             <div>
-                <input type="submit" id="" value="Manual x" onClick={() => this.handleClick()}/>
+                <input type="submit" id="" value="Manual %" onClick={() => this.handleClick()}/>
                 <input type="submit" id="" value="reset" onClick={() => this.handleReset()}/>
                 <div className="scroll-container">
                     {print}

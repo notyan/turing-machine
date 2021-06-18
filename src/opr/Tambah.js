@@ -56,7 +56,6 @@ class Tambah extends Component {
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter+1, 2)
         }
-        
         console.log("state " + this.state.pos)
     }
     second(){
