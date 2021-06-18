@@ -158,9 +158,6 @@ class Kali extends Component {
             this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 12)
         }
-        else if(this.state.newList[this.state.iter] === "B"){
-            this.stateUpdate(this.state.iter+1, 11)
-        }
         console.log("iter " + this.state.iter)
         console.log("state " + this.state.pos)
     }
