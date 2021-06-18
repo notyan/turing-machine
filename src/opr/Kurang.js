@@ -96,7 +96,6 @@ class Kurang extends Component {
         }else{
             this.start()
         }
-        
     }
     handleReset= () =>{
         this.setState({

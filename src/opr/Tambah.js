@@ -18,36 +18,20 @@ class Tambah extends Component {
     }
     start(){
         switch (this.state.pos) {
-            case -1:
-                this.init();
-                break;
-            case 0:
-                this.zero();
-                break;
-            case 1:
-                this.first();
-                break;
-            case 2:
-                this.second();
-                break;
-            case 3:
-                this.third();
-                break;
-            case 4:
-                this.forth();
-                break;
-            case 5:
-                this.fifth();
-                break;
-            default:
-                break;
+            case -1 : this.init();      break;
+            case 0  : this.zero();      break;
+            case 1  : this.first();     break;
+            case 2  : this.second();    break;
+            case 3  : this.third();     break;
+            case 4  : this.forth();     break;
+            case 5  : this.fifth();     break;
+            default :   break;
         }
     }
     
     stateUpdate = (i,pos) => {
         this.setState({
-            iter: i,
-            pos: pos,
+            iter: i, pos: pos,
         })
     }
     init(){
@@ -130,7 +114,6 @@ class Tambah extends Component {
 
 
     tapeMaker = (props) =>{
-        const variable = this.props.variable;
         const print = this.state.newList.map((val, i) => {
             if(i === this.state.iter){
                 return(
@@ -144,13 +127,11 @@ class Tambah extends Component {
                         {val}
                     </div>  
                 )
-            }
-
-            
+            } 
         })
         return(
             <div>
-                <input type="submit" id="" value="+" onClick={() => this.handleClick()}/>
+                <input type="submit" id="" value="Manual" onClick={() => this.handleClick()}/>
                 <input type="submit" id="" value="reset" onClick={() => this.handleReset()}/>
                 <div className="scroll-container">
                     {print}
