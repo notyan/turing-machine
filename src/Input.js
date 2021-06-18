@@ -32,12 +32,16 @@ class Input extends Component{
         for (var i =0;i<limit;i++){
             i < variable.first ? tape.push(0) : (i === parseInt(variable.first)) ? tape.push(1) :   tape.push(0) 
         }
-        tape.unshift('B')
+        
         if(variable.delimiter === "+" || variable.delimiter === "-" ){
+            tape.unshift('B')
             tape.push('B')
         }else if(variable.delimiter === "x" || variable.delimiter === "/" || variable.delimiter === "%"){
-            tape.push(1)
-            tape.push('B')
+            tape.unshift('B')
+            tape.push(1, 'B')
+        }else if(variable.delimiter === "log"){
+            tape.unshift('B', 1)
+            tape.push(1, 'B')
         }
         
         const print = variable.list.map((val) => {
@@ -52,6 +56,7 @@ class Input extends Component{
                 <input type="submit" id="delimiter" value="/" onClick={() => this.handleClick(tape, '/')}/>
                 <input type="submit" id="delimiter" value="x" onClick={() => this.handleClick(tape, 'x')}/>
                 <input type="submit" id="delimiter" value="%" onClick={() => this.handleClick(tape, '%')}/>
+                <input type="submit" id="delimiter" value="log" onClick={() => this.handleClick(tape, 'log')}/>
                 <div className="scroll-container" >
                     {variable.blank}
                     {print}
