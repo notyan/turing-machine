@@ -224,7 +224,6 @@ class Log extends Component {
                 this.listUpdate(0, this.state.iter)
             })            
         }
-
     }
     twenFifth(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 25) :
