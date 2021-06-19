@@ -3,19 +3,23 @@
   overflow-y: hidden;
   white-space: nowrap;
 }
+.content{
+  margin: auto;
+}
 .box {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+  transition: 0.3s;
   display: inline-block;
-  background-color: darkcyan;
   width: 32px;
   height: 48px;
   margin: 2px;
   font-weight: bold;
   text-align: center;
-  border: solid;
   line-height: 48px;
 }
 .white{
-  background-color: darkgray;
+  border-style: hidden hidden solid hidden;
+  border-width: 10px;
 }
 .m-lay{
   width: 75%;
@@ -33,4 +37,16 @@
   display: inline-block;
   font-size: 16px;
   border-radius: 4px;
+}
+.no-right{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-size{
+  max-width: 256px;
+  height: 32px;
+}
+.no-left{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }

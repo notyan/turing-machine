@@ -55,15 +55,15 @@ class Input extends Component{
         })
         return(
             <div>
-                <div className="btn-group" role="group" aria-label="Basic example">
-                    <input className='bttn' type="submit" id="delimiter" value="+" onClick={() => this.handleClick(tape, '+')}/>
-                    <input className='bttn' type="submit" id="delimiter" value="-" onClick={() => this.handleClick(tape, '-')}/>
-                    <input className='bttn' type="submit" id="delimiter" value="/" onClick={() => this.handleClick(tape, '/')}/>
-                    <input className='bttn' type="submit" id="delimiter" value="x" onClick={() => this.handleClick(tape, 'x')}/>
-                    <input className='bttn' type="submit" id="delimiter" value="%" onClick={() => this.handleClick(tape, '%')}/>
-                    <input className='bttn' type="submit" id="delimiter" value="log" onClick={() => this.handleClick(tape, 'log')}/>
-                    <input className='bttn' type="submit" id="delimiter" value="exp" onClick={() => this.handleClick(tape, 'exp')}/>
-                    <input className='bttn' type="submit" id="delimiter" value="!" onClick={() => this.handleClick(tape, '!')}/>
+                <div className="btn-group mb-1" role="group" >
+                    <input className='btn bttn' type="submit" id="delimiter" value="+" onClick={() => this.handleClick(tape, '+')}/>
+                    <input className='btn bttn' type="submit" id="delimiter" value="-" onClick={() => this.handleClick(tape, '-')}/>
+                    <input className='btn bttn' type="submit" id="delimiter" value="/" onClick={() => this.handleClick(tape, '/')}/>
+                    <input className='btn bttn' type="submit" id="delimiter" value="x" onClick={() => this.handleClick(tape, 'x')}/>
+                    <input className='btn bttn' type="submit" id="delimiter" value="%" onClick={() => this.handleClick(tape, '%')}/>
+                    <input className='btn bttn' type="submit" id="delimiter" value="log" onClick={() => this.handleClick(tape, 'log')}/>
+                    <input className='btn bttn' type="submit" id="delimiter" value="exp" onClick={() => this.handleClick(tape, 'exp')}/>
+                    <input className='btn bttn' type="submit" id="delimiter" value="!" onClick={() => this.handleClick(tape, '!')}/>
                 </div>
                 <div className="scroll-container" >
                     {variable.blank}
@@ -79,12 +79,12 @@ class Input extends Component{
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <div className="input-group mb-1">
-                        <span className="input-group-text" id="Input 1">Input 1:</span>
-                        <input className='form-control ' type="text" id="first" onChange={this.handleChange}/>
+                        <span className="input-group-text no-right input-size" id="Input 1">Input 1:</span>
+                        <input className='form-control no-left input-size' type="text" id="first" onChange={this.handleChange}/>
                     </div>
                     <div className="input-group mb-1">
-                        <span className="input-group-text" id="Input 1">Input 2:</span>
-                        <input className='form-control' type="text" id="second" onChange={this.handleChange}/>
+                        <span className="input-group-text no-right input-size" id="Input 1">Input 2:</span>
+                        <input className='form-control no-left input-size' type="text" id="second" onChange={this.handleChange}/>
                     </div>
                     <br></br>
                     {this.tapeMaker()}

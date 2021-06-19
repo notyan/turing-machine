@@ -343,9 +343,11 @@ class Pangkat extends Component {
             }   
         })
         return(
-            <div>
-                <input class='bttn' type="submit" id="" value="Manual %" onClick={() => this.handleClick()}/>
-                <input class='bttn' type="submit" id="" value="reset" onClick={() => this.handleReset()}/>
+            <div >
+                <div className="btn-group" role="group" >
+                    <input class='btn bttn' type="submit" id="" value="Manual %" onClick={() => this.handleClick()}/>
+                    <input class='btn bttn' type="submit" id="" value="reset" onClick={() => this.handleReset()}/>
+                </div>
                 <div className="scroll-container">
                     {print}
                 </div>

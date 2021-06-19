@@ -43,7 +43,7 @@ class App extends Component{
                     : <br></br>
     
     return(
-      <div className="m-lay">
+      <div className="m-lay content">
         <Input variable={this.state} inputCatcher={this.inputCatcher}/>
         {operation}
       </div>
