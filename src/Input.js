@@ -75,15 +75,25 @@ class Input extends Component{
     }
 
     render(){
+        let satu; let dua;
+        let opr = this.props.variable.delimiter
+        console.log(opr)
+        opr == null ?  satu = <span className="input-group-text no-right input-size" id="Input 1">Input 1</span> :
+            opr === 'exp' ? satu = <span className="input-group-text no-right lebar input-size" id="Input 1">Pangkat</span> : 
+                satu = <span className="input-group-text no-right input-size" id="Input 1">Input 1</span>
+        
+        opr == null ?  dua = <span className="input-group-text no-right input-size" id="Input 1">Input 2</span> :
+            opr === 'exp' ? dua = <span className="input-group-text no-right lebar input-size" id="Input 1">Basis</span> : 
+                dua = <span className="input-group-text no-right input-size" id="Input 1">Input 2</span>
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <div className="input-group mb-1">
-                        <span className="input-group-text no-right input-size" id="Input 1">Input 1:</span>
+                        {satu}
                         <input className='form-control no-left input-size' type="text" id="first" onChange={this.handleChange}/>
                     </div>
                     <div className="input-group mb-1">
-                        <span className="input-group-text no-right input-size" id="Input 1">Input 2:</span>
+                        {dua}
                         <input className='form-control no-left input-size' type="text" id="second" onChange={this.handleChange}/>
                     </div>
                     <br></br>

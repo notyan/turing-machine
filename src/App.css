@@ -25,8 +25,16 @@
   width: 75%;
   margin: 2.5% auto;
 }
+.bttn:hover{
+  color: #FF96AD;
+}
+.btn:focus{
+  color: #FFF5FD;
+  background-color: #005A8D;
+  box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
+}
 .bttn{
-  background-color: #f44336;
+  background-color: #022E57;
   border: none;
   color: white;
   margin: 2px;
@@ -41,6 +49,10 @@
 .no-right{
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+}
+.lebar{
+  width: 80px;
+  text-align: center;
 }
 .input-size{
   max-width: 256px;
