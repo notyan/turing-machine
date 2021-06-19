@@ -18,13 +18,13 @@ class Tambah extends Component {
     }
     start(){
         switch (this.state.pos) {
-            case -1 : this.init();      break;
-            case 0  : this.zero();      break;
-            case 1  : this.first();     break;
-            case 2  : this.second();    break;
-            case 3  : this.third();     break;
-            case 4  : this.forth();     break;
-            case 5  : this.fifth();     break;
+            case -1 : this.init();  break;
+            case 0  : this.nol();   break;
+            case 1  : this.siji();  break;
+            case 2  : this.loro();  break;
+            case 3  : this.telu();  break;
+            case 4  : this.papat(); break;
+            case 5  : this.limo();  break;
             default :   break;
         }
     }
@@ -37,7 +37,7 @@ class Tambah extends Component {
     init(){
         this.stateUpdate(this.state.iter, 0)
     }
-    zero(){
+    nol(){
         console.log("iter " + this.state.iter)
         if(this.state.newList[this.state.iter] === 0){
             this.listUpdate('B', this.state.iter)
@@ -47,7 +47,7 @@ class Tambah extends Component {
             this.stateUpdate(this.state.iter+1, 5)
         }
     }
-    first(){
+    siji(){
         console.log("iter " +  this.state.iter)
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter+1, 1)
@@ -55,7 +55,7 @@ class Tambah extends Component {
             this.stateUpdate(this.state.iter+1, 2)
         }
     }
-    second(){
+    loro(){
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter+1, 2)
         }else if(this.state.newList[this.state.iter] === 'B' ){
@@ -66,21 +66,21 @@ class Tambah extends Component {
             this.stateUpdate(this.state.iter-1, 3)
         }
     }
-    third(){
+    telu(){
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter-1, 3)
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter-1, 4)
         }
     }
-    forth(){
+    papat(){
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter-1, 4)
         }else if(this.state.newList[this.state.iter] === 'B' ){
             this.stateUpdate(this.state.iter+1, 0)
         }
     }
-    fifth(){
+    limo(){
         console.log("ENDED")
         console.log("ENDED")
     }

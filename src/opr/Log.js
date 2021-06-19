@@ -17,38 +17,38 @@ class Log extends Component {
     start(){
         switch (this.state.pos) {
             case -1 : this.init();          break;
-            case 0  : this.zero();          break;
-            case 1  : this.first();         break;
-            case 2  : this.second();        break;
-            case 3  : this.third();         break;
-            case 4  : this.forth();         break;
-            case 5  : this.fifth();         break;
-            case 6  : this.sixth();         break;
-            case 7  : this.seventh();       break;
-            case 8  : this.eighth();        break;
-            case 9  : this.ninth();         break;
-            case 10 : this.tenth();         break;
-            case 11 : this.eleventh();      break;
-            case 12 : this.twelfth();       break;
-            case 13 : this.thirteenth();    break;
-            case 14 : this.fourteenth();    break;
-            case 15 : this.fifteenth();     break;
-            case 16 : this.sixteenth();     break;
-            case 17 : this.seventeenth();   break;
-            case 18 : this.eighteenth();    break;
-            case 19 : this.nineteenth();    break;
-            case 20 : this.twentieth();     break;
-            case 21 : this.twenFirst();     break;
-            case 22 : this.twenSecond();    break;
-            case 23 : this.twenThird();     break;
-            case 24 : this.twenForth();     break;
-            case 25 : this.twenFifth();    break;
-            case 26 : this.twenSixth();     break;
-            case 27 : this.twenSeventh();   break;
-            case 28 : this.twenEighth();    break;
-            case 29 : this.twenNinth();     break;
-            case 30 : this.thirtieth();     break;
-            case 31 : this.thirFirst();     break;
+            case 0  : this.nol();           break;
+            case 1  : this.siji();          break;
+            case 2  : this.loro();          break;
+            case 3  : this.telu();          break;
+            case 4  : this.papat();         break;
+            case 5  : this.limo();          break;
+            case 6  : this.enem();          break;
+            case 7  : this.pitu();          break;
+            case 8  : this.wolu();          break;
+            case 9  : this.songo();         break;
+            case 10 : this.sepuluh();       break;
+            case 11 : this.sewelas();       break;
+            case 12 : this.rolas();         break;
+            case 13 : this.telulas();       break;
+            case 14 : this.patbelas();      break;
+            case 15 : this.limolas();       break;
+            case 16 : this.nembelas();      break;
+            case 17 : this.pitulas();       break;
+            case 18 : this.wolulas();       break;
+            case 19 : this.songolas();      break;
+            case 20 : this.rongpuluh();     break;
+            case 21 : this.selikur();       break;
+            case 22 : this.rolikur();       break;
+            case 23 : this.telulikur();     break;
+            case 24 : this.patlikur();      break;
+            case 25 : this.selawe();        break;
+            case 26 : this.nemlikur();      break;
+            case 27 : this.pitulikur();     break;
+            case 28 : this.wolulikur();     break;
+            case 29 : this.songolikur();    break;
+            case 30 : this.telungpuluh();   break;
+            case 31 : this.telusiji();      break;
             default : break;
         }
     }
@@ -61,22 +61,22 @@ class Log extends Component {
     init(){
         this.stateUpdate(this.state.iter, 0)
     }
-    zero(){
+    nol(){
         if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter+1, 1)
         }
     }
-    first(){
+    siji(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 1) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 2)
             : console.log("Outside Range")
     }
-    second(){
+    loro(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 2) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 3)
             : console.log("Outside Range")
     }
-    third(){
+    telu(){
         if(this.state.newList[this.state.iter] === 0){
             this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter-1, 4)
@@ -84,18 +84,18 @@ class Log extends Component {
             this.stateUpdate(this.state.iter+1, 9)
         } 
     }
-    forth(){
+    papat(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 4) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 5)
             : console.log("Outside Range")
     }
-    fifth(){
+    limo(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 5) :
         (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter+1, 6):
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 6)
             : console.log("Outside Range")
     }
-    sixth(){
+    enem(){
         if(this.state.newList[this.state.iter] === 0){
             this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 7)
@@ -103,22 +103,22 @@ class Log extends Component {
             this.stateUpdate(this.state.iter+1, 13)
         }
     }
-    seventh(){
+    pitu(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 7) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 8)
             : console.log("Outside Range")
     }
-    eighth(){
+    wolu(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 8) :
         (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter-1, 3)
             : console.log("Outside Range")
     }
-    ninth(){
+    songo(){
         (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter+1, 9) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 10)
             : console.log("Outside Range")
     }
-    tenth(){
+    sepuluh(){
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter+1, 10)
         }else if(this.state.newList[this.state.iter] === 'B'){
@@ -127,12 +127,12 @@ class Log extends Component {
             this.stateUpdate(this.state.iter-1, 11)
         }
     }
-    eleventh(){
+    sewelas(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 11) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 12)
             : console.log("Outside Range")
     }
-    twelfth(){
+    rolas(){
         if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter+1, 2)
         }else if(this.state.newList[this.state.iter] === 'B'){
@@ -140,7 +140,7 @@ class Log extends Component {
             this.stateUpdate(this.state.iter-1, 12)
         }
     }
-    thirteenth(){
+    telulas(){
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter+1, 13)
         }else if(this.state.newList[this.state.iter] === 'B'){
@@ -150,12 +150,12 @@ class Log extends Component {
             this.stateUpdate(this.state.iter+1, 14)
         }
     }
-    fourteenth(){
+    patbelas(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 14) :
         (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter-1, 15)
             : console.log("Outside Range")
     }
-    fifteenth(){
+    limolas(){
         if(this.state.newList[this.state.iter] === 0){
             this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter-1, 16)
@@ -163,18 +163,18 @@ class Log extends Component {
             this.stateUpdate(this.state.iter-1, 22)
         }
     }
-    sixteenth(){
+    nembelas(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 16) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 17)
             : console.log("Outside Range")
     }
-    seventeenth(){
+    pitulas(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 17) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 18)
             : console.log("Outside Range")
 
     }
-    eighteenth(){
+    wolulas(){
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter-1, 18)
         }else if(this.state.newList[this.state.iter] === 'B'){
@@ -182,27 +182,27 @@ class Log extends Component {
             this.stateUpdate(this.state.iter+1, 19)
         }
     }
-    nineteenth(){
+    songolas(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 19) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 20)
             : console.log("Outside Range")
     }
-    twentieth(){
+    rongpuluh(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 20) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 21)
             : console.log("Outside Range")
     }
-    twenFirst(){
+    selikur(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 21) :
         (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter-1, 15)
             : console.log("Outside Range")
     }
-    twenSecond(){
+    rolikur(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 22) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 23)
             : console.log("Outside Range")
     }
-    twenThird(){
+    telulikur(){
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter-1, 23)
         }else if(this.state.newList[this.state.iter] === 1){
@@ -212,7 +212,7 @@ class Log extends Component {
             this.stateUpdate(this.state.iter-1, 23)
         }
     }
-    twenForth(){
+    patlikur(){
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter-1, 24)
         }else if(this.state.newList[this.state.iter] === 1){
@@ -225,31 +225,31 @@ class Log extends Component {
             })            
         }
     }
-    twenFifth(){
+    selawe(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 25) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 26)
             : console.log("Outside Range")
     }
-    twenSixth(){
+    nemlikur(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 27) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 26)
             : console.log("Outside Range")
     }
-    twenSeventh(){
+    pitulikur(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 1) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 28)
             : console.log("Outside Range")
     }
-    twenEighth(){
+    wolulikur(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 29)
             : console.log("Outside Range")
     }
-    twenNinth(){
+    songolikur(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 30) :
         (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 29)
             : console.log("Outside Range")
     }
-    thirtieth(){
+    telungpuluh(){
         if(this.state.newList[this.state.iter] === 0){
             this.listUpdate("B", this.state.iter)
             this.stateUpdate(this.state.iter+1, 30)
@@ -260,7 +260,7 @@ class Log extends Component {
             this.stateUpdate(this.state.iter+1, 31)
         }
     }
-    thirFirst(){
+    telusiji(){
         console.log("ENDED")
         console.log("ENDED")
     }

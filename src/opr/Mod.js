@@ -18,21 +18,21 @@ class Mod extends Component {
     start(){
         switch (this.state.pos) {
             case -1 : this.init();      break;
-            case 0  : this.zero();      break;
-            case 1  : this.first();     break;
-            case 2  : this.second();    break;
-            case 3  : this.third();     break;
-            case 4  : this.forth();     break;
-            case 5  : this.fifth();     break;
-            case 6  : this.sixth();     break;
-            case 7  : this.seventh();   break;
-            case 8  : this.eighth();    break;
-            case 9  : this.ninth();     break;
-            case 10 : this.tenth();     break;
-            case 11 : this.eleventh();  break;
-            case 12 : this.twelfth();   break;
-            case 13 : this.thirteenth();   break;
-            case 14 : this.fourteenth();   break;
+            case 0  : this.nol();       break;
+            case 1  : this.siji();      break;
+            case 2  : this.loro();      break;
+            case 3  : this.telu();      break;
+            case 4  : this.papat();     break;
+            case 5  : this.limo();      break;
+            case 6  : this.enem();      break;
+            case 7  : this.pitu();      break;
+            case 8  : this.wolu();      break;
+            case 9  : this.songo();     break;
+            case 10 : this.sepuluh();   break;
+            case 11 : this.sewelas();   break;
+            case 12 : this.rolas();     break;
+            case 13 : this.telulas();   break;
+            case 14 : this.patbelas();  break;
             default : break;
         }
     }
@@ -45,7 +45,7 @@ class Mod extends Component {
     init(){
         this.stateUpdate(this.state.iter, 0)
     }
-    zero(){
+    nol(){
         if(this.state.newList[this.state.iter] === 0){
             this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 1)
@@ -53,14 +53,14 @@ class Mod extends Component {
             this.stateUpdate(this.state.iter+1, 7)
         }
     }
-    first(){
+    siji(){
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter+1, 1)
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter+1, 2)
         }
     }
-    second(){
+    loro(){
         if(this.state.newList[this.state.iter] === 'B'){
             this.stateUpdate(this.state.iter+1, 2)
         }else if(this.state.newList[this.state.iter] === 0 ){
@@ -70,7 +70,7 @@ class Mod extends Component {
             this.stateUpdate(this.state.iter-1, 5)
         }
     }
-    third(){
+    telu(){
         //console.log("\nhead "+ this.state.newList[this.state.iter] )
         if(this.state.newList[this.state.iter] === 'B'){
             this.stateUpdate(this.state.iter-1, 3)
@@ -78,14 +78,14 @@ class Mod extends Component {
             this.stateUpdate(this.state.iter-1, 4)
         } 
     }
-    forth(){
+    papat(){
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter-1, 4)
         }else if(this.state.newList[this.state.iter] === 'B' ){
             this.stateUpdate(this.state.iter+1, 0)
         }
     }
-    fifth(){
+    limo(){
         if(this.state.newList[this.state.iter] === 'B'){
             let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
             this.listUpdate(0, this.state.iter)
@@ -94,7 +94,7 @@ class Mod extends Component {
             this.stateUpdate(this.state.iter-1, 6)
         }
     }
-    sixth(){
+    enem(){
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter-1, 6)
         }else if(this.state.newList[this.state.iter] === "B"){
@@ -102,14 +102,14 @@ class Mod extends Component {
             this.stateUpdate(this.state.iter-1, 14)
         }
     }
-    seventh(){
+    pitu(){
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter-1, 8)
         }else if(this.state.newList[this.state.iter] === "B"){
             this.stateUpdate(this.state.iter+1, 7)
         }
     }
-    eighth(){
+    wolu(){
         if(this.state.newList[this.state.iter] === 1){
             this.listUpdate("B", this.state.iter)
             this.stateUpdate(this.state.iter+1, 12)
@@ -118,14 +118,14 @@ class Mod extends Component {
             this.stateUpdate(this.state.iter-1, 9)
         }
     }
-    ninth(){
+    songo(){
         if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter-1, 10)
         }else if(this.state.newList[this.state.iter] === 'B'){
             this.stateUpdate(this.state.iter-1, 9)
         }
     }
-    tenth(){
+    sepuluh(){
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter-1, 10)
         }else if(this.state.newList[this.state.iter] === 'B'){
@@ -133,14 +133,14 @@ class Mod extends Component {
             this.stateUpdate(this.state.iter+1, 11)
         }
     }
-    eleventh(){
+    sewelas(){
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter+1, 11)
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter+1, 7)
         }
     }
-    twelfth(){
+    rolas(){
         if(this.state.newList[this.state.iter] === 0){
             this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 12)
@@ -149,11 +149,11 @@ class Mod extends Component {
             this.stateUpdate(this.state.iter+1, 13)
         }
     }
-    thirteenth(){
+    telulas(){
         console.log("ENDED" )
         console.log("ENDED" )
     }
-    fourteenth(){
+    patbelas(){
         if(this.state.newList[this.state.iter] === 'B'){
             this.stateUpdate(this.state.iter+1, 0)
         }
