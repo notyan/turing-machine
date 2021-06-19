@@ -172,11 +172,29 @@ class Mod extends Component {
             this.start()
         }
     }
+    handleAuto = () =>{
+        this.setState({
+            auto: 'SpeedUp',
+        })
+        if(this.state.newList.length === 0){
+            this.setState({
+                newList: [...this.props.variable.list],
+            }, () => this.start() )
+        }else if(this.state.pos !== 13 ){ //TERMINATE THE LOOP
+            this.start()
+            setTimeout(this.handleAuto, 1000);
+        }else if(this.state.pos == -1){
+            clearTimeout(this.handleAuto)
+        }
+    }
     handleReset= () =>{
+        clearTimeout(this.handleAuto)
         this.setState({
             newList: [],
             iter: 1,
             pos: -1,  //-1 karena baru kepikiran di akhir kalau pas initiate tu belum dirubah
+            auto: 'Auto',
+            manual: 'Start'
         }, () => console.log(this.state.newList))
     }
 
@@ -195,12 +213,13 @@ class Mod extends Component {
                         {val}
                     </div>  
                 )
-            }   
+            } 
         })
         return(
             <div>
-                <input class='bttn' type="submit" id="" value="Manual %" onClick={() => this.handleClick()}/>
-                <input class='bttn' type="submit" id="" value="reset" onClick={() => this.handleReset()}/>
+                <input className='bttn manual' type="submit" id="manual" value={this.state.manual} onClick={() => this.handleClick()}/>
+                <input className='bttn auto' type="submit" id="auto" value={this.state.auto} onClick={() => this.handleAuto()}/>
+                <input className='bttn' type="submit" id="" value="Reset" onClick={() => this.handleReset()}/>
                 <div className="scroll-container">
                     {print}
                 </div>
