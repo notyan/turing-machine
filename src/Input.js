@@ -43,8 +43,7 @@ class Input extends Component{
             tape.unshift('B', 1)
             tape.push(1, 'B')
         }else if(variable.delimiter === "!"){
-            tape.unshift('B')
-            tape.length--
+            tape.unshift('B',1)
             tape.push('B')
         }
         
