@@ -335,7 +335,8 @@ class Pangkat extends Component {
     handleClick = () =>{
         if(this.state.newList.length === 0){
             this.setState({
-                newList: [...this.props.variable.list]
+                newList: [...this.props.variable.list],
+                manual: 'Next'
             }, () => this.start(), console.log(this.state.newList) )
         }else{
             this.start()
