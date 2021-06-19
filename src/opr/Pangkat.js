@@ -103,6 +103,8 @@ class Pangkat extends Component {
             let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
             this.listUpdate(0, this.state.iter)
             this.stateUpdate(this.state.iter-1, 5)
+        }else if(this.state.newList[this.state.iter] === 'X'){
+            this.stateUpdate(this.state.iter+1, 4)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
@@ -130,6 +132,8 @@ class Pangkat extends Component {
             let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
             this.listUpdate(1, this.state.iter)
             this.stateUpdate(this.state.iter-1, 8)
+        }else if(this.state.newList[this.state.iter] === 'X'){
+            this.stateUpdate(this.state.iter+1, 7)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
@@ -166,6 +170,8 @@ class Pangkat extends Component {
             this.stateUpdate(this.state.iter+1, 15)
         }else if(this.state.newList[this.state.iter] === "B"){
             this.stateUpdate(this.state.iter-1, 11)
+        }else if(this.state.newList[this.state.iter] === 'X'){
+            this.stateUpdate(this.state.iter+1, 15)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
@@ -204,9 +210,14 @@ class Pangkat extends Component {
         }
     }
     nembelas(){
-        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 16) :
-        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 17)
-            : console.log("Outside Range")
+        if(this.state.newList[this.state.iter] === 0){
+            this.listUpdate(1, this.state.iter)
+            this.stateUpdate(this.state.iter-1, 16)
+        }else if(this.state.newList[this.state.iter] === 1){
+            this.stateUpdate(this.state.iter+1, 17)
+        }else if(this.state.newList[this.state.iter] === 'X'){
+            this.stateUpdate(this.state.iter-1, 16)
+        }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
@@ -219,9 +230,9 @@ class Pangkat extends Component {
     }
     wolulas(){
         if(this.state.newList[this.state.iter] === 0){
-            this.listUpdate(1, this.state.iter)
+            this.listUpdate('X', this.state.iter)
             this.stateUpdate(this.state.iter+1, 18)
-        }else if(this.state.newList[this.state.iter] === 1){
+        }else if(this.state.newList[this.state.iter] === "X"){
             this.stateUpdate(this.state.iter+1, 19)
         }
         console.log("iter " +  this.state.iter)
@@ -246,6 +257,8 @@ class Pangkat extends Component {
         }else if(this.state.newList[this.state.iter] === 'B'){
             this.listUpdate(0, this.state.iter)
             this.stateUpdate(this.state.iter-1, 21)
+        }else if(this.state.newList[this.state.iter] === 'X'){
+            this.stateUpdate(this.state.iter-1, 20)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
@@ -283,7 +296,10 @@ class Pangkat extends Component {
             this.stateUpdate(this.state.iter+1, 25)
         }else if(this.state.newList[this.state.iter] === 1){
             this.listUpdate('B', this.state.iter)
-            this.stateUpdate(this.state.iter+1, 24)
+            this.stateUpdate(this.state.iter+1, 25)
+        }else if(this.state.newList[this.state.iter] === 'X'){
+            this.listUpdate('B', this.state.iter)
+            this.stateUpdate(this.state.iter-1, 24)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)

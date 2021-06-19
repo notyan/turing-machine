@@ -43,6 +43,16 @@ class Faktorial extends Component {
             case 23 : this.telulikur();     break;
             case 24 : this.patlikur();      break;
             case 25 : this.selawe();        break;
+            case 26 : this.nemlikur();      break;
+            case 27 : this.pitulikur();      break; //New state after finding error
+            case 28  : this.wolulikur();           break;
+            case 29  : this.songolikur();          break;
+            case 30  : this.telungpuluh();          break;
+            case 31  : this.telusiji();          break;
+            case 32  : this.teluloro();         break;
+            case 33  : this.telutelu();          break;
+            case 34  : this.telupapat();          break;
+            case 35  : this.telulimo();          break;
             default : break;
         }
     }
@@ -56,273 +66,268 @@ class Faktorial extends Component {
         this.stateUpdate(this.state.iter, 0)
     }
     nol(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 0)
-        }else if(this.state.newList[this.state.iter] === 'B'){
-            let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
-            this.listUpdate(1, this.state.iter)
-            this.stateUpdate(this.state.iter+0, 1)
-        }
+        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 1)
+            : console.log("Outside Range")
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     siji(){
-        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 1) :
-        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 1) :
-        (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter+1, 2)
+        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 1) :
+        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 2)
             : console.log("Outside Range")
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     loro(){
         if(this.state.newList[this.state.iter] === 0){
-            this.listUpdate('X', this.state.iter)
+            this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 3)
         }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter+1, 5)
+            this.stateUpdate(this.state.iter+1, 7)
+        }else if(this.state.newList[this.state.iter] === 'B'){
+            this.stateUpdate(this.state.iter+1, 2)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     telu(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 3)
-        }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter+1, 3)
-        }else if(this.state.newList[this.state.iter] === 'B'){
-            let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
-            this.listUpdate(0, this.state.iter)
-            this.stateUpdate(this.state.iter+0, 4)
-        }
-        console.log("iter " +  this.state.iter)
-        console.log("state " + this.state.pos)
-    }
-    papat(){
-        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 4) :
-        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 4) :
-        (this.state.newList[this.state.iter] === 'X') ? this.stateUpdate(this.state.iter+1, 2)
+        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 3) :
+        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 4)
             : console.log("Outside Range")
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
-    limo(){
+    papat(){
         if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 5)
+            this.stateUpdate(this.state.iter+1, 4)
+        }else if(this.state.newList[this.state.iter] === 1){
+            this.stateUpdate(this.state.iter-1, 11)
         }else if(this.state.newList[this.state.iter] === 'B'){
             let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
-            this.listUpdate(1, this.state.iter)
-            this.stateUpdate(this.state.iter-1, 7)
+            this.listUpdate(0, this.state.iter)
+            this.stateUpdate(this.state.iter-1, 5)
+        }else if(this.state.newList[this.state.iter] === 'X'){
+            this.stateUpdate(this.state.iter+1, 4)
         }
+        console.log("iter " +  this.state.iter)
+        console.log("state " + this.state.pos)
+    }
+    limo(){
+        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 5) :
+        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 6)
+            : console.log("Outside Range")
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     enem(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 6) :
-        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 6) :
-        (this.state.newList[this.state.iter] === 'X') ? this.stateUpdate(this.state.iter-1, 6) :
-        (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter+1, 16)
+        (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter+1, 2)
             : console.log("Outside Range")
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     pitu(){
-        if(this.state.newList[this.state.iter] === 'X'){
-            this.listUpdate(0, this.state.iter)
-            this.stateUpdate(this.state.iter-1, 7)
-        }else if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter-1, 7)
+        if(this.state.newList[this.state.iter] === 0){  
+            this.stateUpdate(this.state.iter+1, 7) 
         }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter-1, 7)
+            this.stateUpdate(this.state.iter-1, 27)
         }else if(this.state.newList[this.state.iter] === 'B'){
-            this.stateUpdate(this.state.iter+1, 8)
+            let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
+            this.listUpdate(1, this.state.iter)
+            this.stateUpdate(this.state.iter-1, 8)
+        }else if(this.state.newList[this.state.iter] === 'X'){
+            this.stateUpdate(this.state.iter+1, 7)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     wolu(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.listUpdate('B', this.state.iter)
-            this.stateUpdate(this.state.iter-1, 7)
-        }
+        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 8) :
+        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 9)
+            : console.log("Outside Range")
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     songo(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.listUpdate('X', this.state.iter)
-            this.stateUpdate(this.state.iter+1, 10)
-        }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter-1, 6)
+        if(this.state.newList[this.state.iter] === 1){
+            this.stateUpdate(this.state.iter-1, 10)
+        }else if(this.state.newList[this.state.iter] === 'B'){
+            this.listUpdate(0, this.state.iter)
+            this.stateUpdate(this.state.iter-1, 9)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     sepuluh(){
-        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 10) :
-        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 11)
+        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 10) :
+        (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter+1, 0)
             : console.log("Outside Range")
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     sewelas(){
         if(this.state.newList[this.state.iter] === 0){
-            this.listUpdate('X', this.state.iter)
+            this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 12)
         }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter-1, 14)
+            this.stateUpdate(this.state.iter+1, 15)
+        }else if(this.state.newList[this.state.iter] === "B"){
+            this.stateUpdate(this.state.iter-1, 11)
+        }else if(this.state.newList[this.state.iter] === 'X'){
+            this.stateUpdate(this.state.iter+1, 15)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     rolas(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 12)
-        }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter+1, 12)
-        }else if(this.state.newList[this.state.iter] === 'B'){
-            this.listUpdate(0, this.state.iter)
-            this.stateUpdate(this.state.iter+0, 13)
-        }
-        console.log("iter " +  this.state.iter)
-        console.log("state " + this.state.pos)
-    }
-    telulas(){
-        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 13) :
-        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 13) :
-        (this.state.newList[this.state.iter] === 'X') ? this.stateUpdate(this.state.iter+1, 11)
+        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 13) :
+        (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter+1, 12)
             : console.log("Outside Range")
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
-    patbelas(){
-        if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter-1, 15)
-        }else if(this.state.newList[this.state.iter] === 'X'){
+    telulas(){
+        if(this.state.newList[this.state.iter] === 0){
+            this.stateUpdate(this.state.iter+1, 13)
+        }else if(this.state.newList[this.state.iter] === 'B'){
+            let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
             this.listUpdate(0, this.state.iter)
             this.stateUpdate(this.state.iter-1, 14)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
-    limolas(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter-1, 15)
-        }else if(this.state.newList[this.state.iter] === 1){
-            this.listUpdate(0, this.state.iter)
-            this.stateUpdate(this.state.iter-1, 15)
-        }else if(this.state.newList[this.state.iter] === 'X'){
-            this.stateUpdate(this.state.iter+1, 9)
-        }
+    patbelas(){
+        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 14) :
+        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 11)
+            : console.log("Outside Range")
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
-    nembelas(){
+    limolas(){
         if(this.state.newList[this.state.iter] === 1){
-            this.listUpdate('B', this.state.iter)
-            this.stateUpdate(this.state.iter+1, 25)
-        }else if(this.state.newList[this.state.iter] === 'X'){
-            this.listUpdate('B', this.state.iter)
+            this.stateUpdate(this.state.iter-1, 16)
+        }else if(this.state.newList[this.state.iter] === "B"){
+            this.listUpdate(0, this.state.iter)
+            this.stateUpdate(this.state.iter+1, 15)
+        }
+    }
+    nembelas(){
+        if(this.state.newList[this.state.iter] === 0){
+            this.listUpdate(1, this.state.iter)
+            this.stateUpdate(this.state.iter-1, 16)
+        }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter+1, 17)
+        }else if(this.state.newList[this.state.iter] === 'X'){
+            this.stateUpdate(this.state.iter-1, 16)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     pitulas(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.listUpdate('B', this.state.iter)
-            this.stateUpdate(this.state.iter+1, 18)
-        }else if(this.state.newList[this.state.iter] === 1){
-            this.listUpdate('B', this.state.iter)
-            this.stateUpdate(this.state.iter+1, 18)
-        }else if(this.state.newList[this.state.iter] === 'B'){
-            this.stateUpdate(this.state.iter+1, 15)
-        }else if(this.state.newList[this.state.iter] === 'X'){
-            this.stateUpdate(this.state.iter+1, 19)
-        }
+        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 17) :
+        (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter+1, 2)
+            : console.log("Outside Range")
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     wolulas(){
         if(this.state.newList[this.state.iter] === 0){
-            this.listUpdate('B', this.state.iter)
+            this.listUpdate('X', this.state.iter)
             this.stateUpdate(this.state.iter+1, 18)
-        }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter+0, 24)
-        }else if(this.state.newList[this.state.iter] === 'X'){
-            this.stateUpdate(this.state.iter+1, 22)
+        }else if(this.state.newList[this.state.iter] === "X"){
+            this.stateUpdate(this.state.iter+1, 19)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     songolas(){
-        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 19) :
-        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 20) :
-        (this.state.newList[this.state.iter] === 'X') ? this.stateUpdate(this.state.iter+1, 19)
-            : console.log("Outside Range")
+        if(this.state.newList[this.state.iter] === 0){
+            this.stateUpdate(this.state.iter+1, 19)
+        }else if(this.state.newList[this.state.iter] === 'B'){
+            let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
+            this.listUpdate(1, this.state.iter)
+            this.stateUpdate(this.state.iter-1, 20)
+        }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     rongpuluh(){
-        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 20) :
-        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 21) :
-        (this.state.newList[this.state.iter] === 'X') ? this.stateUpdate(this.state.iter+1, 20)
-            : console.log("Outside Range")
+        if(this.state.newList[this.state.iter] === 0){
+            this.stateUpdate(this.state.iter-1, 20)
+        }else if(this.state.newList[this.state.iter] === 1){
+            this.stateUpdate(this.state.iter-1, 20)
+        }else if(this.state.newList[this.state.iter] === 'B'){
+            this.listUpdate(0, this.state.iter)
+            this.stateUpdate(this.state.iter-1, 21)
+        }else if(this.state.newList[this.state.iter] === 'X'){
+            this.stateUpdate(this.state.iter-1, 20)
+        }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     selikur(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.listUpdate('X', this.state.iter)
-            this.stateUpdate(this.state.iter-1, 6)
-        }else if(this.state.newList[this.state.iter] === 1){
-            this.listUpdate('X', this.state.iter)
-            this.stateUpdate(this.state.iter-1, 6)
-        }else if(this.state.newList[this.state.iter] === 'X'){
+        if(this.state.newList[this.state.iter] === 1){
+            this.stateUpdate(this.state.iter-1, 22)
+        }else if(this.state.newList[this.state.iter] === 'B'){
+            this.listUpdate(0, this.state.iter)
             this.stateUpdate(this.state.iter-1, 21)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     rolikur(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 22)
-        }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter+1, 22)
-        }else if(this.state.newList[this.state.iter] === 'B'){
-            this.listUpdate(1, this.state.iter)
-            this.stateUpdate(this.state.iter-1, 23)
-        }else if(this.state.newList[this.state.iter] === 'X'){
-            this.stateUpdate(this.state.iter+1, 22)
-        }
-        console.log("iter " +  this.state.iter)
-        console.log("state " + this.state.pos)
-    }
-    telulikur(){
-        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 23) :
-        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 23) :
-        (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter+1, 9) :
-        (this.state.newList[this.state.iter] === 'X') ? this.stateUpdate(this.state.iter+1, 23)
+        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 22) :
+        (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter+1, 0)
             : console.log("Outside Range")
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
-    patlikur(){
-        console.log("ENDED")
-        console.log("ENDED")
-    }
-    selawe(){
+    telulikur(){
         if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 24)
+            this.listUpdate('B', this.state.iter)
+            this.stateUpdate(this.state.iter+1, 23)
         }else if(this.state.newList[this.state.iter] === 1){
             this.listUpdate('B', this.state.iter)
-            this.stateUpdate(this.state.iter+0, 25)          
-        }else if(this.state.newList[this.state.iter] === 'B'){
-            this.stateUpdate(this.state.iter+1, 25)          
+            this.stateUpdate(this.state.iter+1, 24)
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
-
+    patlikur(){
+        if(this.state.newList[this.state.iter] === 0){
+            this.stateUpdate(this.state.iter+1, 25)
+        }else if(this.state.newList[this.state.iter] === 1){
+            this.listUpdate('B', this.state.iter)
+            this.stateUpdate(this.state.iter+1, 25)
+        }else if(this.state.newList[this.state.iter] === 'X'){
+            this.listUpdate('B', this.state.iter)
+            this.stateUpdate(this.state.iter-1, 24)
+        }
+        console.log("iter " +  this.state.iter)
+        console.log("state " + this.state.pos)
+    }
+    selawe(){
+        if(this.state.newList[this.state.iter] === 0){
+            this.stateUpdate(this.state.iter+1, 25)
+        }else if(this.state.newList[this.state.iter] === 1){
+            this.listUpdate('B', this.state.iter)
+            this.stateUpdate(this.state.iter+1, 26)          
+        }
+        console.log("iter " +  this.state.iter)
+        console.log("state " + this.state.pos)
+    }
+    nemlikur(){
+        console.log("ENDED")
+        console.log("ENDED")
+    }
+    pitulikur(){
+        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 27) :
+        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 18)
+            : console.log("Outside Range")
+        console.log("iter " +  this.state.iter)
+        console.log("state " + this.state.pos)
+    }
     handleClick = () =>{
         if(this.state.newList.length === 0){
             this.setState({
@@ -357,9 +362,11 @@ class Faktorial extends Component {
             }   
         })
         return(
-            <div>
-                <input class='bttn' type="submit" id="" value="Manual !" onClick={() => this.handleClick()}/>
-                <input class='bttn' type="submit" id="" value="reset" onClick={() => this.handleReset()}/>
+            <div >
+                <div className="btn-group" role="group" >
+                    <input class='btn bttn' type="submit" id="" value="Manual %" onClick={() => this.handleClick()}/>
+                    <input class='btn bttn' type="submit" id="" value="reset" onClick={() => this.handleReset()}/>
+                </div>
                 <div className="scroll-container">
                     {print}
                 </div>
