@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Kali extends Component {
+class Bagi extends Component {
     state = {
         iter: 1,
         newList: [],
@@ -226,4 +226,4 @@ class Kali extends Component {
     }
 }
 
-export default Kali
+export default Bagi

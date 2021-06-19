@@ -54,6 +54,7 @@ class Input extends Component{
         })
         return(
             <div>
+                <h4>Operasi</h4>
                 <div className="btn-group mb-1" role="group" >
                     <input className='btn bttn' type="submit" id="delimiter" value="+" onClick={() => this.handleClick(tape, '+')}/>
                     <input className='btn bttn' type="submit" id="delimiter" value="-" onClick={() => this.handleClick(tape, '-')}/>
@@ -64,7 +65,9 @@ class Input extends Component{
                     <input className='btn bttn' type="submit" id="delimiter" value="exp" onClick={() => this.handleClick(tape, 'exp')}/>
                     <input className='btn bttn' type="submit" id="delimiter" value="!" onClick={() => this.handleClick(tape, '!')}/>
                 </div>
+                <h4>User Input Translate</h4>
                 <div className="scroll-container" >
+                    
                     {variable.blank}
                     {print}
                     {variable.blank}
@@ -86,6 +89,7 @@ class Input extends Component{
                 dua = <span className="input-group-text no-right input-size" id="Input 1">Input 2</span>
         return(
             <div>
+                <h4>User Input</h4>
                 <form onSubmit={this.handleSubmit}>
                     <div className="input-group mb-1">
                         {satu}
@@ -98,6 +102,7 @@ class Input extends Component{
                     <br></br>
                     {this.tapeMaker()}
                 </form>
+                <h4>Turing Machine :</h4>
             </div>
         )
     }
