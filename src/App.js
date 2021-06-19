@@ -8,6 +8,7 @@ import Bagi from './opr/Bagi';
 import Mod from './opr/Mod';
 import Log from './opr/Log';
 import Pangkat from './opr/Pangkat';
+import Faktorial from './opr/Faktorial';
 
 class App extends Component{
   state = {
@@ -38,7 +39,7 @@ class App extends Component{
             : opr === '%' ? operation = <Mod variable={this.state}/>  
               : opr === 'log' ? operation = <Log variable={this.state}/> 
                 : opr === 'exp' ? operation = <Pangkat variable={this.state}/>
-                  : opr === '!' ? operation = <Pangkat variable={this.state}/> 
+                  : opr === '!' ? operation = <Faktorial variable={this.state}/> 
                     : <br></br>
     
     return(

@@ -355,7 +355,7 @@ class Faktorial extends Component {
         })
         return(
             <div>
-                <input class='bttn' type="submit" id="" value="Manual %" onClick={() => this.handleClick()}/>
+                <input class='bttn' type="submit" id="" value="Manual !" onClick={() => this.handleClick()}/>
                 <input class='bttn' type="submit" id="" value="reset" onClick={() => this.handleReset()}/>
                 <div className="scroll-container">
                     {print}
