@@ -79,7 +79,7 @@ class Pangkat extends Component {
             this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 3)
         }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter+1, 7)
+            this.stateUpdate(this.state.iter+1, 18)
         }else if(this.state.newList[this.state.iter] === 'B'){
             this.stateUpdate(this.state.iter+1, 2)
         }
@@ -159,6 +159,8 @@ class Pangkat extends Component {
         if(this.state.newList[this.state.iter] === 0){
             this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 12)
+        }else if(this.state.newList[this.state.iter] === 1){
+            this.stateUpdate(this.state.iter+1, 15)
         }else if(this.state.newList[this.state.iter] === 'B'){
             this.stateUpdate(this.state.iter-1, 11)
         }
@@ -209,9 +211,8 @@ class Pangkat extends Component {
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 17) :
         (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter+1, 2)
             : console.log("Outside Range")
-            console.log("iter " +  this.state.iter)
-            console.log("state " + this.state.pos)
-
+        console.log("iter " +  this.state.iter)
+        console.log("state " + this.state.pos)
     }
     wolulas(){
         if(this.state.newList[this.state.iter] === 0){
@@ -314,7 +315,7 @@ class Pangkat extends Component {
             newList: [],
             iter: 1,
             pos: -1,  //-1 karena baru kepikiran di akhir kalau pas initiate tu belum dirubah
-        }, () => console.log(this.state.newList))
+        }, () => console.clear())
     }
 
     tapeMaker = (props) =>{
