@@ -199,11 +199,11 @@ class Faktorial extends Component {
         console.log("state " + this.state.pos)
     }
     limolas(){
-        if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter-1, 16)
+        if(this.state.newList[this.state.iter] === 0){
+            this.stateUpdate(this.state.iter+1, 15)
         }else if(this.state.newList[this.state.iter] === "B"){
             this.listUpdate(0, this.state.iter)
-            this.stateUpdate(this.state.iter+1, 15)
+            this.stateUpdate(this.state.iter-1, 16)
         }
     }
     nembelas(){
