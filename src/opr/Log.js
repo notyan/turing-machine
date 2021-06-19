@@ -5,6 +5,8 @@ class Log extends Component {
         iter: 1,
         newList: [],
         pos: -1,
+        auto: 'Auto',
+        manual: 'Start'
     }
 
     listUpdate = (x,i) =>{
