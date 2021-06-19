@@ -91,8 +91,7 @@ class Tambah extends Component {
             }, () => this.start(), console.log(this.state.newList) )
         }else{
             this.start()
-        }
-        
+        }   
     }
     handleReset= () =>{
         this.setState({
