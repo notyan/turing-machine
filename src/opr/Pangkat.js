@@ -320,7 +320,8 @@ class Pangkat extends Component {
     }
     pitulikur(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 27) :
-        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 18)
+        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 18) :
+        (this.state.newList[this.state.iter] === "X") ? this.stateUpdate(this.state.iter+1, 18) 
             : console.log("Outside Range")
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)

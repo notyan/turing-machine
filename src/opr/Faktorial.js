@@ -175,28 +175,25 @@ class Faktorial extends Component {
         if(this.state.newList[this.state.iter] === 0){
             this.listUpdate('X', this.state.iter)
             this.stateUpdate(this.state.iter+1, 13)
-        }else if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 13)
-        }else if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 13)
-        }else if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 13)
+        }else if(this.state.newList[this.state.iter] === 1){
+            this.stateUpdate(this.state.iter+1, 18)
+        }else if(this.state.newList[this.state.iter] === "B"){
+            this.stateUpdate(this.state.iter+1, 33)
+        }else if(this.state.newList[this.state.iter] === 'X'){
+            this.stateUpdate(this.state.iter-1, 12)
         }
     }
     telulas(){
-        if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 13)
-        }else if(this.state.newList[this.state.iter] === 'B'){
-            let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
-            this.listUpdate(0, this.state.iter)
-            this.stateUpdate(this.state.iter-1, 14)
-        }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
+        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 14) :
+        (this.state.newList[this.state.iter] === 'X') ? this.stateUpdate(this.state.iter+1, 13) 
+            : console.log("Outside Range")
     }
     patbelas(){
-        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 14) :
-        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter-1, 11)
+        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter+1, 14) :
+        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 15) :
+        (this.state.newList[this.state.iter] === "X") ? this.stateUpdate(this.state.iter+1, 14)
             : console.log("Outside Range")
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
