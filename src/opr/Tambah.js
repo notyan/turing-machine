@@ -103,7 +103,7 @@ class Tambah extends Component {
             this.setState({
                 newList: [...this.props.variable.list],
             }, () => this.start() )
-        }else if(this.state.pos !== 5 ){
+        }else if(this.state.pos !== 5 ){ //TERMINATE THE LOOP
             this.start()
             setTimeout(this.handleAuto, 1000);
         }else if(this.state.pos == -1){

@@ -83,17 +83,17 @@ class Faktorial extends Component {
         }
     }
     loro(){
-        console.log("iter " +  this.state.iter)
-        console.log("state " + this.state.pos)
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter+1, 2)
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter+1, 2)
         }else if(this.state.newList[this.state.iter] === 'B'){
             let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
-            this.listUpdate('0', this.state.iter)
+            this.listUpdate(0, this.state.iter)
             this.stateUpdate(this.state.iter-1, 3)
         }
+        console.log("iter " +  this.state.iter)
+        console.log("state " + this.state.pos)
     }
     telu(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 3) :
@@ -204,6 +204,7 @@ class Faktorial extends Component {
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter+1, 15)
         }else if(this.state.newList[this.state.iter] === "B"){
+            let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
             this.listUpdate(0, this.state.iter)
             this.stateUpdate(this.state.iter-1, 16)
         }
