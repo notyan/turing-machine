@@ -299,6 +299,9 @@ class Pangkat extends Component {
         }else if(this.state.newList[this.state.iter] === 1){
             this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 25)
+        }else if(this.state.newList[this.state.iter] === 'B'){
+            this.listUpdate(0, this.state.iter)
+            this.stateUpdate(this.state.iter+1, 26)
         }else if(this.state.newList[this.state.iter] === 'X'){
             this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 24)
