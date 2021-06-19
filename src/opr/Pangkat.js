@@ -240,7 +240,7 @@ class Pangkat extends Component {
     }
     rongpuluh(){
         if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 20)
+            this.stateUpdate(this.state.iter-1, 20)
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter-1, 20)
         }else if(this.state.newList[this.state.iter] === 'B'){
