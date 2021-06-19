@@ -127,6 +127,7 @@ class Pangkat extends Component {
         if(this.state.newList[this.state.iter] === 0){  
             this.stateUpdate(this.state.iter+1, 7) 
         }else if(this.state.newList[this.state.iter] === 1){
+            this.listUpdate("X", this.state.iter)
             this.stateUpdate(this.state.iter-1, 27)
         }else if(this.state.newList[this.state.iter] === 'B'){
             let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
@@ -211,10 +212,9 @@ class Pangkat extends Component {
     }
     nembelas(){
         if(this.state.newList[this.state.iter] === 0){
-            this.listUpdate(1, this.state.iter)
             this.stateUpdate(this.state.iter-1, 16)
         }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter+1, 17)
+            this.stateUpdate(this.state.iter-1, 17)
         }else if(this.state.newList[this.state.iter] === 'X'){
             this.stateUpdate(this.state.iter-1, 16)
         }
