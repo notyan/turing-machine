@@ -7,6 +7,7 @@ import Kali from './opr/Kali';
 import Bagi from './opr/Bagi';
 import Mod from './opr/Mod';
 import Log from './opr/Log';
+import Pangkat from './opr/Pangkat';
 
 class App extends Component{
   state = {
@@ -36,7 +37,8 @@ class App extends Component{
           : opr === '/' ? operation = <Bagi variable={this.state}/>  
             : opr === '%' ? operation = <Mod variable={this.state}/>  
               : opr === 'log' ? operation = <Log variable={this.state}/> 
-                : <br></br>
+                : opr === 'exp' ? operation = <Pangkat variable={this.state}/> 
+                  : <br></br>
     
     return(
       <div className="m-lay">
