@@ -33,7 +33,7 @@ class Input extends Component{
             i < variable.first ? tape.push(0) : (i === parseInt(variable.first)) ? tape.push(1) :   tape.push(0) 
         }
         
-        if(variable.delimiter === "+" || variable.delimiter === "-" || variable.delimiter === "!"){
+        if(variable.delimiter === "+" || variable.delimiter === "-" ){
             tape.unshift('B')
             tape.push('B')
         }else if(variable.delimiter === "x" || variable.delimiter === "/" || variable.delimiter === "%" ||variable.delimiter === "exp" ){
@@ -42,6 +42,10 @@ class Input extends Component{
         }else if(variable.delimiter === "log"){
             tape.unshift('B', 1)
             tape.push(1, 'B')
+        }else if(variable.delimiter === "!"){
+            tape.unshift('B')
+            tape.length--
+            tape.push('B')
         }
         
         const print = variable.list.map((val) => {
