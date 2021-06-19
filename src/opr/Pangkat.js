@@ -44,6 +44,7 @@ class Pangkat extends Component {
             case 24 : this.patlikur();      break;
             case 25 : this.selawe();        break;
             case 26 : this.nemlikur();      break;
+            case 27 : this.pitulikur();      break; //New state after finding error
             default : break;
         }
     }
@@ -79,7 +80,7 @@ class Pangkat extends Component {
             this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 3)
         }else if(this.state.newList[this.state.iter] === 1){
-            this.stateUpdate(this.state.iter+1, 18)
+            this.stateUpdate(this.state.iter+1, 7)
         }else if(this.state.newList[this.state.iter] === 'B'){
             this.stateUpdate(this.state.iter+1, 2)
         }
@@ -121,8 +122,10 @@ class Pangkat extends Component {
         console.log("state " + this.state.pos)
     }
     pitu(){
-        if(this.state.newList[this.state.iter] === 0){  //0 nek head e 0
-            this.stateUpdate(this.state.iter+1, 7) /// This.state.iter+1 = pergerakan ke kanan   //7 ki jalan ke state 7
+        if(this.state.newList[this.state.iter] === 0){  
+            this.stateUpdate(this.state.iter+1, 7) 
+        }else if(this.state.newList[this.state.iter] === 1){
+            this.stateUpdate(this.state.iter-1, 27)
         }else if(this.state.newList[this.state.iter] === 'B'){
             let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
             this.listUpdate(1, this.state.iter)
@@ -161,7 +164,7 @@ class Pangkat extends Component {
             this.stateUpdate(this.state.iter+1, 12)
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter+1, 15)
-        }else if(this.state.newList[this.state.iter] === 'B'){
+        }else if(this.state.newList[this.state.iter] === "B"){
             this.stateUpdate(this.state.iter-1, 11)
         }
         console.log("iter " +  this.state.iter)
@@ -195,8 +198,8 @@ class Pangkat extends Component {
     limolas(){
         if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter-1, 16)
-        }else if(this.state.newList[this.state.iter] === 0){
-            this.listUpdate('B', this.state.iter)
+        }else if(this.state.newList[this.state.iter] === "B"){
+            this.listUpdate(0, this.state.iter)
             this.stateUpdate(this.state.iter+1, 15)
         }
     }
@@ -228,6 +231,7 @@ class Pangkat extends Component {
         if(this.state.newList[this.state.iter] === 0){
             this.stateUpdate(this.state.iter+1, 19)
         }else if(this.state.newList[this.state.iter] === 'B'){
+            let temp = this.state.newList;  temp.push('B'); this.setState({newList:temp})
             this.listUpdate(1, this.state.iter)
             this.stateUpdate(this.state.iter-1, 20)
         }
@@ -236,7 +240,7 @@ class Pangkat extends Component {
     }
     rongpuluh(){
         if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter-1, 20)
+            this.stateUpdate(this.state.iter+1, 20)
         }else if(this.state.newList[this.state.iter] === 1){
             this.stateUpdate(this.state.iter-1, 20)
         }else if(this.state.newList[this.state.iter] === 'B'){
@@ -258,7 +262,7 @@ class Pangkat extends Component {
     }
     rolikur(){
         (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 22) :
-        (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter+1, 23)
+        (this.state.newList[this.state.iter] === 'B') ? this.stateUpdate(this.state.iter+1, 0)
             : console.log("Outside Range")
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
@@ -276,19 +280,17 @@ class Pangkat extends Component {
     }
     patlikur(){
         if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 24)
+            this.stateUpdate(this.state.iter+1, 25)
         }else if(this.state.newList[this.state.iter] === 1){
+            this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 24)
-        }else if(this.state.newList[this.state.iter] === 'B'){
-            this.stateUpdate(this.state.iter+1, 25) 
-           
         }
         console.log("iter " +  this.state.iter)
         console.log("state " + this.state.pos)
     }
     selawe(){
         if(this.state.newList[this.state.iter] === 0){
-            this.stateUpdate(this.state.iter+1, 24)
+            this.stateUpdate(this.state.iter+1, 25)
         }else if(this.state.newList[this.state.iter] === 1){
             this.listUpdate('B', this.state.iter)
             this.stateUpdate(this.state.iter+1, 26)          
@@ -300,7 +302,13 @@ class Pangkat extends Component {
         console.log("ENDED")
         console.log("ENDED")
     }
-
+    pitulikur(){
+        (this.state.newList[this.state.iter] === 0) ? this.stateUpdate(this.state.iter-1, 27) :
+        (this.state.newList[this.state.iter] === 1) ? this.stateUpdate(this.state.iter+1, 18)
+            : console.log("Outside Range")
+        console.log("iter " +  this.state.iter)
+        console.log("state " + this.state.pos)
+    }
     handleClick = () =>{
         if(this.state.newList.length === 0){
             this.setState({
