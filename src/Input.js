@@ -33,7 +33,7 @@ class Input extends Component{
             i < variable.first ? tape.push(0) : (i === parseInt(variable.first)) ? tape.push(1) :   tape.push(0) 
         }
         
-        if(variable.delimiter === "+" || variable.delimiter === "-" ){
+        if(variable.delimiter === "+" || variable.delimiter === "-" || variable.delimiter === "!"){
             tape.unshift('B')
             tape.push('B')
         }else if(variable.delimiter === "x" || variable.delimiter === "/" || variable.delimiter === "%" ||variable.delimiter === "exp" ){
@@ -58,6 +58,7 @@ class Input extends Component{
                 <input class='bttn' type="submit" id="delimiter" value="%" onClick={() => this.handleClick(tape, '%')}/>
                 <input class='bttn' type="submit" id="delimiter" value="log" onClick={() => this.handleClick(tape, 'log')}/>
                 <input class='bttn' type="submit" id="delimiter" value="exp" onClick={() => this.handleClick(tape, 'exp')}/>
+                <input class='bttn' type="submit" id="delimiter" value="!" onClick={() => this.handleClick(tape, '!')}/>
                 <div className="scroll-container" >
                     {variable.blank}
                     {print}
